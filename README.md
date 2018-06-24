@@ -8,6 +8,6 @@ Furthermore, I started learning some theory about data structures and algorithms
 
 **Feel free to contribute** proposing improvements and opening discussions as issues.
 
-##### Notes
+#### Notes
 
 Those problems that expects printing something to the standard output are not tested yet. A possible approach is a SoC (separation of concerns), making possible to test those functions responsibles of the output generation (strings?).
