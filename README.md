@@ -6,7 +6,7 @@ When I created this repository, my main idea was the possibility of having a wel
 
 Furthermore, I started learning some theory about data structures and algorithms at the same time I was learning Golang, so I wanted to improve both.
 
-Feel free to contribute proposing improvements and opening discussions as issues.
+**Feel free to contribute** proposing improvements and opening discussions as issues.
 
 ##### Notes
 
