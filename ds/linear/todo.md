@@ -1,15 +1,10 @@
 ### Data Structures
 #### Linear
 ##### Linked List (Singly & Doubly)
-- [X] Define structure
-- [X] Create - O(1)
-- [X] Add - O(N)
-- [X] Delete - ?
-    - [X] Len - O(N)
-    - [X] Contains - O(N)
-- [ ] ReplaceAt - O(N)
-- [ ] InsertAt - O(N)
-- [ ] DeleteAt - O(N)
-- [ ] Refactor List to struct with pointer
-- [ ] Check if add/remove last is needed
+- [ ] Insert (at)
+- [ ] Replace (first, last, at)
+- [ ] Delete (first, last, at)
+- [ ] Refactor w/ length field
+- [ ] Get for element at the middle
+- [ ] Functions for loops
 - [ ] Improve tests
