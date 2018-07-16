@@ -3,7 +3,8 @@ package linear
 import (
 	"reflect"
 	"errors"
-	"container/list"
+	"bytes"
+	"golang-hacker-rank/strings"
 )
 
 const emptyListMsg = "trying to do an operation over an empty list"
@@ -19,13 +20,6 @@ type ListNode struct {
 type LinkedList struct {
 	Head *ListNode
 	Tail *ListNode
-}
-
-type List interface {
-	Add()
-	Len() int
-	Contains(value interface{}) bool
-	GetAt(at int) interface{}
 }
 
 func CreateLinkedList(values []interface{}) (*LinkedList, error) {
@@ -183,4 +177,22 @@ func (head *ListNode) GetAt(at int) interface{} {
 		pos++
 	}
 	return obtained
+}
+
+// Time complexity: O(?)
+func (list *LinkedList) String(strFn strings.Fn) string {
+	var b bytes.Buffer // TODO: Pre-calculate the size of the resulting string
+	var currNode *ListNode
+
+	if nil != list.Head {
+		b.WriteString(strFn(list.Head.Value))
+		currNode = list.Head.Next
+	}
+
+	for nil != currNode {
+		b.WriteString(" ")
+		b.WriteString(strFn(currNode.Value))
+		currNode = currNode.Next
+	}
+	return b.String()
 }
