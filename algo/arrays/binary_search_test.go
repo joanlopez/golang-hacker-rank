@@ -5,7 +5,7 @@ import (
 	"golang-hacker-rank/compare"
 )
 
-type tc struct {
+type BinarySearchTestCase struct {
 	name     string
 	arr      []interface{}
 	search   interface{}
@@ -14,7 +14,7 @@ type tc struct {
 	cmpFn    compare.Fn
 }
 
-var tests = []tc{
+var binarySearchTestCases = []BinarySearchTestCase{
 	{"iterative existing int", []interface{}{1, 2, 3, 4, 5}, 3, 2, IterativeBinarySearch, compare.IntFn},
 	{"iterative non-existing int", []interface{}{1, 2, 4, 5, 6}, 3, -1, IterativeBinarySearch, compare.IntFn},
 	{"iterative existing string", []interface{}{"a", "b", "c", "d", "e"}, "c", 2, IterativeBinarySearch, compare.StringFn},
@@ -26,7 +26,7 @@ var tests = []tc{
 }
 
 func TestBinarySearch(t *testing.T) {
-	for _, tc := range tests {
+	for _, tc := range binarySearchTestCases {
 		t.Run(tc.name, func(t *testing.T) {
 			got := tc.fn(tc.arr, 0, 4, tc.search, tc.cmpFn)
 			if tc.expected != got {
