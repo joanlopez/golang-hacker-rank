@@ -23,7 +23,3 @@ func TestCountFruit(t *testing.T) {
 		t.Errorf("Incorrect fruit count, got: %v, want: %v.", count, 1)
 	}
 }
-
-func TestCountApplesAndOranges(t *testing.T) {
-	CountApplesAndOranges(7, 11, 5, 15, []int32{-2, 2, 1}, []int32{5, -6})
-}
