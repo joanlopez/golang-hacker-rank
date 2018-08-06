@@ -19,15 +19,11 @@ var quickSortTestCases = []QuickSortTestCase{
 }
 
 func TestQuickSort(t *testing.T) {
-	original := []interface{}{3, 5, 4, 1, 2}
-	expected := []interface{}{1, 2, 3, 4, 5}
-	QuickSort(original, 0, 4, compare.IntFn)
-
 	for _, tc := range quickSortTestCases {
 		t.Run(tc.name, func(t *testing.T) {
 			QuickSort(tc.original, 0, 4, tc.cmpFn)
 			if !reflect.DeepEqual(tc.expected, tc.original) {
-				t.Fatalf("quicksort %v has failed returning %v instead of %v", tc.name, original, expected)
+				t.Fatalf("quicksort %v has failed returning %v instead of %v", tc.name, tc.original, tc.expected)
 			}
 		})
 	}
