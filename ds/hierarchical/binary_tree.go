@@ -4,6 +4,8 @@ import (
 	"github.com/joanlopez/golang-hacker-rank/compare"
 	"fmt"
 	str "github.com/joanlopez/golang-hacker-rank/strings"
+	"bytes"
+	"github.com/joanlopez/golang-hacker-rank/ds/linear"
 )
 
 // Maxim number of nodes: 2^h - 1
@@ -28,51 +30,68 @@ func NewBinaryTree(cmpFn compare.Fn, strFn str.Fn) *BinaryTree {
 }
 
 // Time Complexity: O(n)
-func (b *BinaryTree) Contains(pattern interface{}) bool {
-	return b.root.contains(pattern, b.cmpFn)
+func (t *BinaryTree) Contains(pattern interface{}) bool {
+	return t.root.contains(pattern, t.cmpFn)
 }
 
 // Time Complexity: O(log(n))
-func (b *BinaryTree) Insert(data interface{}) {
+func (t *BinaryTree) Insert(data interface{}) {
 	newNode := &BinaryTreeNode{data, nil, nil}
-	if b.root == nil {
-		b.root = newNode
+	if t.root == nil {
+		t.root = newNode
 		return
 	}
-	b.root.insert(newNode)
+	t.root.insert(newNode)
 }
 
 // Time Complexity: O(n)
-func (b *BinaryTree) CountLeafs() int {
-	if b.root == nil {
+func (t *BinaryTree) CountLeafs() int {
+	if t.root == nil {
 		return 0
 	}
-	return b.root.countFullChildren() + 1
+	return t.root.countFullChildren() + 1
 }
 
 // Time complexity: O(n)
-func (b *BinaryTree) Delete(data interface{}) {
+func (t *BinaryTree) Delete(data interface{}) {
 
 }
 
 // Time complexity: O(n) without taking into account the strings management
-func (b *BinaryTree) InOrder() string {
-	return b.root.inOrder(b.strFn)
+func (t *BinaryTree) InOrder() string {
+	return t.root.inOrder(t.strFn)
 }
 
 // Time complexity: O(n) without taking into account the strings management
-func (b *BinaryTree) PreOrder() string {
-	return b.root.preOrder(b.strFn)
+func (t *BinaryTree) PreOrder() string {
+	return t.root.preOrder(t.strFn)
 }
 
 // Time complexity: O(n) without taking into account the strings management
-func (b *BinaryTree) PostOrder() string {
-	return b.root.postOrder(b.strFn)
+func (t *BinaryTree) PostOrder() string {
+	return t.root.postOrder(t.strFn)
 }
 
 // Time complexity: O(n) without taking into account the strings management
-func (b *BinaryTree) LevelOrder() string {
-	return b.root.levelOrder(b.strFn)
+func (t *BinaryTree) LevelOrder() string {
+	if t.root == nil {
+		return ""
+	}
+	queue := linear.NewQueue(t.strFn)
+	var b bytes.Buffer
+	b.WriteString(t.strFn(t.root.data))
+	enqueueChildren(t.root, &queue)
+
+	for true != queue.Empty() {
+		next := queue.Dequeue().(*BinaryTreeNode)
+		if next == nil {
+			continue
+		}
+		b.WriteString(" ")
+		b.WriteString(t.strFn(next.data))
+		enqueueChildren(next, &queue)
+	}
+	return b.String()
 }
 
 //
@@ -182,19 +201,13 @@ func (n *BinaryTreeNode) postOrder(strFn str.Fn) string {
 	}, " ", "")
 }
 
-func (n *BinaryTreeNode) levelOrder(strFn str.Fn) string {
-	if n == nil {
-		return ""
-	}
-	return str.JoinByIgnoring([]string{
-		n.left.inOrder(strFn),
-		strFn(n.data),
-		n.right.inOrder(strFn),
-	}, " ", "")
-}
-
 func assign(from, to *BinaryTreeNode) {
 	to.data = from.data
 	to.left = from.left
 	to.right = from.right
+}
+
+func enqueueChildren(n *BinaryTreeNode, q *linear.Queue) {
+	(*q).Enqueue(n.left)
+	(*q).Enqueue(n.right)
 }
