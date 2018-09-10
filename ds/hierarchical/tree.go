@@ -3,5 +3,10 @@ package hierarchical
 type Tree interface {
 	Contains(pattern interface{}) bool
 	Insert(data interface{})
-	Leafs() int
+	Delete(data interface{})
+	CountLeafs() int
+	InOrder() string
+	PreOrder() string
+	PostOrder() string
+	LevelOrder() string
 }
