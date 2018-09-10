@@ -228,6 +228,16 @@ func (l *DoublyLinkedList) Dequeue() interface{} {
 	return l.Shift()
 }
 
+// Proxy method
+func (l *DoublyLinkedList) Stack(data interface{}) {
+	l.Prepend(data)
+}
+
+// Proxy method
+func (l *DoublyLinkedList) Unstack() interface{} {
+	return l.Shift()
+}
+
 //
 // Node functions
 //
