@@ -1,8 +1,8 @@
 package linear
 
 import (
-	"testing"
 	"github.com/joanlopez/golang-hacker-rank/compare"
+	"testing"
 )
 
 func TestStack(t *testing.T) {

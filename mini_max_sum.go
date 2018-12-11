@@ -1,8 +1,8 @@
 package main
 
 import (
-	"sort"
 	"fmt"
+	"sort"
 )
 
 func sumTo64(arr []int32) int64 {

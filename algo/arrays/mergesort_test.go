@@ -1,9 +1,9 @@
 package arrays
 
 import (
-	"golang-hacker-rank/compare"
-	"testing"
+	"github.com/joanlopez/golang-hacker-rank/compare"
 	"reflect"
+	"testing"
 )
 
 type MergeSortTestCase struct {

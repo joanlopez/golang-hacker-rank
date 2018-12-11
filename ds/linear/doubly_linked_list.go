@@ -2,9 +2,9 @@ package linear
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/joanlopez/golang-hacker-rank/compare"
 	"github.com/joanlopez/golang-hacker-rank/strings"
-	"fmt"
 )
 
 const nonValidPositionMsg = "a wrong position was given: out of bounds"

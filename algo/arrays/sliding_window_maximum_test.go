@@ -1,8 +1,8 @@
 package arrays
 
 import (
+	"github.com/joanlopez/golang-hacker-rank/strings"
 	"testing"
-	"golang-hacker-rank/strings"
 )
 
 func TestQuadraticSlidingWindowMax(t *testing.T) {

@@ -1,8 +1,8 @@
 package arrays
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 type RotateFn func(arr []int, d, n int)

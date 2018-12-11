@@ -1,7 +1,7 @@
 package arrays
 
 import (
-	"golang-hacker-rank/compare"
+	"github.com/joanlopez/golang-hacker-rank/compare"
 )
 
 func IterativeBinarySearch(array []interface{}, low, high int, x interface{}, cmpFn compare.Fn) int {

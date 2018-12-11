@@ -1,6 +1,6 @@
 package arrays
 
-import "golang-hacker-rank/compare"
+import "github.com/joanlopez/golang-hacker-rank/compare"
 
 func QuickSort(arr []interface{}, low, high int, cmpFn compare.Fn) {
 	if low < high {

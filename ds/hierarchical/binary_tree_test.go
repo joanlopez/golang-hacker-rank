@@ -1,9 +1,9 @@
 package hierarchical
 
 import (
-	"testing"
 	"github.com/joanlopez/golang-hacker-rank/compare"
 	"github.com/joanlopez/golang-hacker-rank/strings"
+	"testing"
 )
 
 type TraverseFn func(b *BinaryTree) string

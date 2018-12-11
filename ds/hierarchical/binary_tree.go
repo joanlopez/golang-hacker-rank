@@ -1,11 +1,11 @@
 package hierarchical
 
 import (
-	"github.com/joanlopez/golang-hacker-rank/compare"
-	"fmt"
-	str "github.com/joanlopez/golang-hacker-rank/strings"
 	"bytes"
+	"fmt"
+	"github.com/joanlopez/golang-hacker-rank/compare"
 	"github.com/joanlopez/golang-hacker-rank/ds/linear"
+	str "github.com/joanlopez/golang-hacker-rank/strings"
 )
 
 // Maxim number of nodes: 2^h - 1

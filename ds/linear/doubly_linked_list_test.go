@@ -1,9 +1,9 @@
 package linear
 
 import (
-	"testing"
 	"github.com/joanlopez/golang-hacker-rank/compare"
 	"github.com/joanlopez/golang-hacker-rank/strings"
+	"testing"
 )
 
 // TODO: Rewrite tests to improve the code

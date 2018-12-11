@@ -1,6 +1,6 @@
 package arrays
 
-import "golang-hacker-rank/ds/linear"
+import "github.com/joanlopez/golang-hacker-rank/ds/linear"
 
 func QuadraticSlidingWindowMax(arr []int, arraySize, intervalSize int) *linear.LinkedList {
 	var max int

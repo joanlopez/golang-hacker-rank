@@ -2,7 +2,7 @@ package arrays
 
 import (
 	"testing"
-	"golang-hacker-rank/compare"
+	"github.com/joanlopez/golang-hacker-rank/compare"
 )
 
 type BinarySearchTestCase struct {

@@ -1,6 +1,6 @@
 package arrays
 
-import "golang-hacker-rank/math"
+import "github.com/joanlopez/golang-hacker-rank/math"
 
 // Time complexity: O(n * d)
 func OneByOneRotation(arr []int, d, n int) {

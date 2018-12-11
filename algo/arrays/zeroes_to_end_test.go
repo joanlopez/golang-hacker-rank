@@ -1,8 +1,8 @@
 package arrays
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestZeroesToEnd(t *testing.T) {
