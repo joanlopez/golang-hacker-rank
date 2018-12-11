@@ -1,10 +1,14 @@
 package arrays
 
-import "github.com/joanlopez/golang-hacker-rank/ds/linear"
+import (
+	"github.com/joanlopez/golang-hacker-rank/compare"
+	"github.com/joanlopez/golang-hacker-rank/ds/linear"
+	"github.com/joanlopez/golang-hacker-rank/strings"
+)
 
-func QuadraticSlidingWindowMax(arr []int, arraySize, intervalSize int) *linear.LinkedList {
+func QuadraticSlidingWindowMax(arr []int, arraySize, intervalSize int) *linear.DoublyLinkedList {
 	var max int
-	maximums := &linear.LinkedList{}
+	maximums := linear.NewDoublyLinkedList(compare.IntFn, strings.IntFn)
 
 	for i := 0; i <= arraySize-intervalSize; i++ {
 		max = arr[i]
@@ -14,7 +18,7 @@ func QuadraticSlidingWindowMax(arr []int, arraySize, intervalSize int) *linear.L
 				max = arr[i+j]
 			}
 		}
-		maximums.InsertLast(max)
+		maximums.Append(max)
 	}
 	return maximums
 }
